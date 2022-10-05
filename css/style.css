@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+}
+
+:root {
+    --final-background-clr: #262626;
+    --button-bg-clr: #15835c;
+    --ripple-hover-clr: #2196f3;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--final-background-clr);
+}
+
+.btn {
+  position: absolute;
+  width: 18rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-bg-clr);
+  border-radius: 0.6rem;
+  border: .2rem solid var(--button-bg-clr);
+  box-shadow: inset 0 0 0.5rem 0 var(--button-bg-clr), 0 0 1.2rem 0 var(--button-bg-clr);
+  overflow: hidden;
+}
+
+.btn:hover {
+    border: .2rem solid var(--ripple-hover-clr);
+    box-shadow: inset 0 0 0.5rem 0 var(--ripple-hover-clr), 0 0 1.2rem 0 var(--ripple-hover-clr);
+}
+
+.btn span {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  color: #fff;
+}
+
+.ripple {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--ripple-hover-clr);
+    animation: rippleanimation 0.7s forwards ease-in-out;
+}
+
+@keyframes rippleanimation {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 37rem;
+        height: 37rem;
+    }
+}
+
